@@ -1,0 +1,32 @@
+div {
+    padding: 10px 50px 10px;
+}
+
+div.welcome {
+    background-color: deepskyblue;
+}
+
+body {
+
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+p {
+    margin: 2px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea, select, button {
+    width : 150px;
+    padding: 0;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
