@@ -39,9 +39,13 @@
             <form method="get" action="search">
                 <p>Search for any Drug, Gene or Variant:</p> <br>
                 <input type="text" name="search"><br>
-                <br>
                 <input type="submit">
             </form>
+        </div>
+        <hr>
+        <div class="footer">
+            <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
+            <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>
         </div>
     </div>
 </section>

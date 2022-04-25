@@ -16,19 +16,41 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 </head>
 <body>
-    <h2>Your Search for ${search} Returned ${output.size()} Result(s):</h2> <br>
-    <table>
-        <tbody>
-        <c:forEach items="${output}" var="result">
-            <tr>
-                <td>
-                    <a href="display?search=${result}">
-                        <c:out value="${result}"></c:out>
-                    </a>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+<div class="container">
+    <div class="welcome">
+        <h2>Your Search for ${search} Returned ${output.size()} Result(s):</h2> <br>
+    </div>
+    <br>
+    <hr>
+    <div class="res-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Results:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${output}" var="result">
+                <tr>
+                    <td>
+                        <p>
+                            <a href="display?search=${result}">
+                            <c:out value="${result}"></c:out>
+                            </a>
+                        </p>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <div class="footer">
+        <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
+        <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>
+    </div>
+</div>
 </body>
 </html>
