@@ -15,6 +15,7 @@
 </head>
 <body>
     <h2>${search}</h2>
+    <h2>${db}</h2>
     <table>
         <tbody>
 

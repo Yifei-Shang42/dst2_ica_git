@@ -17,12 +17,15 @@
 <section>
     <div class="container">
         <div class="welcome">
-            <h2>
-                Welcome to Precision Medicine Database
-                <c:if test="${not empty username}">
-                    <c:out value=" ${username}!"></c:out>
-                </c:if>
-            </h2>
+            <a href="index.jsp">
+                <h2 class="title">
+                    Welcome to Precision Medicine Database
+                    <c:if test="${not empty username}">
+                        <c:out value=" ${username}!"></c:out>
+                    </c:if>
+                </h2>
+            </a>
+
         </div>
         <div class="sign-in">
             <c:choose>
@@ -42,7 +45,6 @@
                 <input type="submit">
             </form>
         </div>
-        <hr>
         <div class="footer">
             <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
             <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>

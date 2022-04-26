@@ -26,6 +26,10 @@ public class Genedao extends Basedao{
         return genes;
     }
 
+//    public static ArrayList<Gene> getDetailedInfo(String search) throws SQLException {
+//        String sql = ""
+//    }
+
     public static void main(String[] args) throws SQLException {
         ArrayList<Gene> genes = generateResultList("BRCA2");
         for (Gene gene : genes) {

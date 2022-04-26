@@ -18,7 +18,8 @@
 <body>
 <div class="container">
     <div class="welcome">
-        <h2>Your Search for ${search} Returned ${output.size()} Result(s):</h2> <br>
+        <a href="index.jsp"><h2 class="title">Precision Medicine Database</h2></a>
+        <h3 class="sub-title">Your Search for ${search} Returned ${output.size()} Result(s):</h3> <br>
     </div>
     <br>
     <hr>
@@ -26,27 +27,26 @@
         <table>
             <thead>
                 <tr>
-                    <th>
-                        Results:
-                    </th>
+                    <th>Results:</th>
+                    <th>Category:</th>
                 </tr>
             </thead>
             <tbody>
             <c:forEach items="${output}" var="result">
                 <tr>
                     <td>
-                        <p>
-                            <a href="display?search=${result}">
-                            <c:out value="${result}"></c:out>
-                            </a>
-                        </p>
+                        <p><a href="display?search=${result[0]}&db=${result[1]}">
+                            <c:out value="${result[0]}"></c:out>
+                        </a></p>
+                    </td>
+                    <td>
+                        <p><c:out value="${result[1]}"></c:out></p>
                     </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
-    <hr>
     <div class="footer">
         <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
         <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>

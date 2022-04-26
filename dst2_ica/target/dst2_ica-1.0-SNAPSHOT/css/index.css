@@ -7,7 +7,7 @@ div.container {
 }
 
 div.welcome {
-    background-color: deepskyblue;
+    background-color: #002e5f;
 }
 
 div.res-table {
@@ -27,8 +27,16 @@ h2, h3 {
     padding: 0;
 }
 
+h2.title {
+    color: white;
+}
+
 h3#register {
     margin: 0 0 5px;
+}
+
+h3.sub-title {
+    color: white;
 }
 
 p {

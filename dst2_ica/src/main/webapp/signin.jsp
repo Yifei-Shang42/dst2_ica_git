@@ -14,7 +14,8 @@
 <body>
 <div class="container">
     <div class="welcome">
-        <h2>Sign In</h2>
+        <a href="index.jsp"><h2 class="title">Precision Medicine Database</h2></a>
+        <h3 class="sub-title">Sign In</h3>
     </div>
     <div class="form">
         <form action="login" method="post">
@@ -25,9 +26,8 @@
     </div>
     <div class="register">
         <h3 id="register">Not registered yet? </h3>
-        <a href="register">Register now!</a>
+        <a href="register.jsp">Register now!</a>
     </div>
-    <hr>
     <div class="footer">
         <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
         <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>
