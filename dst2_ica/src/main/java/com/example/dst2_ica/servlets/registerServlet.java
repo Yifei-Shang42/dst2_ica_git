@@ -1,6 +1,6 @@
 package com.example.dst2_ica.servlets;
 
-import com.example.dst2_ica.dao.Registerdao;
+import com.example.dst2_ica.dao.registerDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ public class registerServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         String uname = req.getParameter("username");
         String pass = req.getParameter("password");
-        Registerdao dao = new Registerdao();
+        registerDao dao = new registerDao();
         if (dao.addUser(uname, pass)) {
             req.setAttribute("success", true);
         } else {

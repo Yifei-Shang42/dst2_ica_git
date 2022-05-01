@@ -1,6 +1,6 @@
 package com.example.dst2_ica.servlets;
 
-import com.example.dst2_ica.dao.Logindao;
+import com.example.dst2_ica.dao.loginDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class loginServlet extends HttpServlet {
     {
         String uname = request.getParameter("username");
         String pass = request.getParameter("password");
-        Logindao dao = new Logindao();
+        loginDao dao = new loginDao();
 
         if(dao.check(uname, pass)) {
             HttpSession session = request.getSession();

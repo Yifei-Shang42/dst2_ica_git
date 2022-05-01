@@ -32,15 +32,15 @@
                 </tr>
             </thead>
             <tbody>
-            <c:forEach items="${output}" var="result">
+            <c:forEach items="${output}" var="searchResult">
                 <tr>
                     <td>
-                        <p><a href="display?search=${result[0]}&db=${result[1]}">
-                            <c:out value="${result[0]}"></c:out>
+                        <p><a href="display?search=${searchResult[0]}&db=${searchResult[1]}&section=overview">
+                            <c:out value="${searchResult[0]}"></c:out>
                         </a></p>
                     </td>
                     <td>
-                        <p><c:out value="${result[1]}"></c:out></p>
+                        <p><c:out value="${searchResult[1]}"></c:out></p>
                     </td>
                 </tr>
             </c:forEach>

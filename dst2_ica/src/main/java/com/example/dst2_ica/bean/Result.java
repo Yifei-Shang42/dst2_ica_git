@@ -1,24 +1,9 @@
 package com.example.dst2_ica.bean;
 
+import java.util.ArrayList;
+
 public abstract class Result {
-    private String id;
-    private String name;
-
-    protected Result(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return getName();
-    }
+    abstract public ArrayList<String> getHead();
+    abstract public ArrayList<String> getData();
+    abstract public ArrayList<String> getLinks();
 }
