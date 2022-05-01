@@ -11,15 +11,32 @@
 <html>
 <head>
     <title>Result Display</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
-    <h2>${search}</h2>
-    <h2>${db}</h2>
-    <table>
-        <tbody>
-
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="welcome">
+            <a href="index.jsp"><h2 class="title">Precision Medicine Database</h2></a>
+            <h3 class="sub-title">${search}</h3> <br>
+        </div>
+        <div class="result-container">
+            <div class="sidenav">
+                <a href="#home">Overview</a><br>
+                <a href="#news">Clinical Annotation</a><br>
+                <a href="#contact">Related To</a><br>
+                <a href="#about">Literature</a><br>
+                <a href="#about">Pathways</a><br>
+            </div>
+            <div class="result">
+                <p>This is result</p>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="footer">
+            <p class="foot">Developed by 2020BMI DST2 Group 3, ZJE Institute</p>
+            <p class="foot">Data Source: <a href="https://www.pharmgkb.org/">PharmGKB Database</a></p>
+        </div>
+    </div>
 </body>
 </html>

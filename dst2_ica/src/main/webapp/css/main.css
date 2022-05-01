@@ -6,6 +6,16 @@ div.container {
     padding: 0;
 }
 
+div.result-container {
+    padding: 0;
+    display: flex;
+}
+
+div.sidenav {
+    font-weight: bold;
+    font-size: .8rem;
+}
+
 div.welcome {
     background-color: #002e5f;
 }

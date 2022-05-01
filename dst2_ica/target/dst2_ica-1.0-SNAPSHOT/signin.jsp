@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Sign in</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
 </head>
 <body>
 <div class="container">
