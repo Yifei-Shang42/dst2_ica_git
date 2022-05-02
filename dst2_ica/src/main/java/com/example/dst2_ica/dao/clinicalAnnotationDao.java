@@ -10,13 +10,11 @@ public class clinicalAnnotationDao extends baseDao {
     public static final String schema = "dst_ica";
     public static ArrayList<annotationResult> generateResultList(String search, String db) throws SQLException{
         // statement
-        String sql = "SELECT * FROM clinical_annotation where "+db+" = "+search;
+        String sql = "SELECT * FROM clinical_annotation where "+db+" = "+"'"+search+"'";
         // get result set
         ResultSet rs = getResultSet(sql, schema);
         // parse & merge result sets into output array
-        ArrayList<annotationResult> out = new ArrayList<>();
-        out.addAll(parseResultSet(rs));
-        return out;
+        return parseResultSet(rs);
     }
 
     private static ArrayList<annotationResult> parseResultSet(ResultSet rs) throws SQLException {

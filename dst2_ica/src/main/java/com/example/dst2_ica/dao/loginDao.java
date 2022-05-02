@@ -10,7 +10,6 @@ public class loginDao extends baseDao{
     String url = "jdbc:mysql://localhost:3306/dst2_ica_login";
     String username = "root";
     String password = "parzival42,./";
-    String schema = "dst2_ica_login";
 
     public boolean check(String uname, String pass) {
         try {

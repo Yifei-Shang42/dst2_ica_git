@@ -1,6 +1,9 @@
 package com.example.dst2_ica.bean;
 
-public class annotationResult {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class annotationResult extends Result{
     private String gene_name;
     private String drug_name;
     private String disease_name;
@@ -41,5 +44,22 @@ public class annotationResult {
         this.variant_name = variant_name;
         this.evidence = evidence;
         this.category = category;
+    }
+
+    // convert itself into front-end friendly ArrayLists
+    public ArrayList<String> getHead() {
+        return new ArrayList<>(Arrays.asList("Evidence Level", "Gene", "Variant", "Drug",
+                "Disease", "Phenotype Category"));
+    }
+
+    public ArrayList<Data> getData() {
+        ArrayList<Data> data = new ArrayList<>();
+        data.add(new Data(evidence));
+        data.add(new Data(gene_name, "display?search=~&db=gene&section=overview"));
+        data.add(new Data(variant_name, "display?search=~&db=variant&section=overview"));
+        data.add(new Data(drug_name, "display?search=~&db=drug&section=overview"));
+        data.add(new Data(disease_name, "display?search=~&db=disease&section=overview"));
+        data.add(new Data(category));
+        return data;
     }
 }

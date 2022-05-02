@@ -1,6 +1,9 @@
 package com.example.dst2_ica.bean;
 
-public class relationResult {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class relationResult extends Result{
     private String firstEntityName;
     private String firstEntityType;
     private String secondEntityName;
@@ -40,5 +43,24 @@ public class relationResult {
         this.secondEntityType = secondEntityType;
         this.association = association;
         this.PMIDs = PMIDs;
+    }
+
+    // convert itself into front-end friendly ArrayLists
+    public ArrayList<String> getHead() {
+        return new ArrayList<>(Arrays.asList("Related Item(s)", "Category", "Association", "PMIDs"));
+    }
+
+    public ArrayList<Data> getData() {
+        ArrayList<Data> data = new ArrayList<>();
+        // for chemicals, we search drug database manually specified here
+        if (secondEntityType.equals("Chemical")) {
+            data.add(new Data(secondEntityName, "display?search=~&db=drug&section=overview"));
+        } else {
+            data.add(new Data(secondEntityName,"display?search=~&db="+secondEntityType.toLowerCase()+"&section=overview"));
+        }
+        data.add(new Data(secondEntityType));
+        data.add(new Data(association));
+        data.add(new Data(PMIDs, "https://pubmed.ncbi.nlm.nih.gov/~"));
+        return data;
     }
 }

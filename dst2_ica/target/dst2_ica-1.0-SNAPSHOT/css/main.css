@@ -3,6 +3,7 @@ div {
 }
 
 div.container {
+    font-family: Arial;
     padding: 0;
 }
 
@@ -14,6 +15,7 @@ div.result-container {
 div.sidenav {
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
 }
 
 div.welcome {
@@ -72,7 +74,7 @@ input, button {
 }
 
 table {
-    table-layout: fixed;
+    table-layout: auto;
     width: 100%;
     border-collapse: collapse;
     border: 3px solid black;

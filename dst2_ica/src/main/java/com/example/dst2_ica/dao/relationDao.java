@@ -11,7 +11,7 @@ public class relationDao extends baseDao {
     public static final String schema = "dst_ica";
     public static ArrayList<relationResult> generateResultList(String search, String db) throws SQLException {
         // statement
-        String sql = "";
+        String sql = "SELECT * FROM relationship WHERE Entity1_name = '"+search+"'";
         // get result set
         ResultSet rs = getResultSet(sql, schema);
         // parse & merge result sets into output array

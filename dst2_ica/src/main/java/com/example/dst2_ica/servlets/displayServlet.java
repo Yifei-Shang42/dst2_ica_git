@@ -1,11 +1,7 @@
 package com.example.dst2_ica.servlets;
 
-import com.example.dst2_ica.bean.annotationResult;
-import com.example.dst2_ica.bean.occurrenceResult;
-import com.example.dst2_ica.bean.relationResult;
-import com.example.dst2_ica.dao.clinicalAnnotationDao;
-import com.example.dst2_ica.dao.occurrenceDao;
-import com.example.dst2_ica.dao.relationDao;
+import com.example.dst2_ica.bean.*;
+import com.example.dst2_ica.dao.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +22,42 @@ public class displayServlet extends HttpServlet {
         req.setAttribute("db", db);
         // get results from corresponding DAOs
         switch (section) {
+            case "overview":
+                switch (db) {
+                    case "gene":
+                        try {
+                            ArrayList<Gene> genes = geneDao.generateResultList(search, db);
+                            req.setAttribute("output", genes);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "variant":
+                        try {
+                            ArrayList<Variant> variants = variantDao.generateResultList(search, db);
+                            req.setAttribute("output", variants);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "disease":
+                        try {
+                            ArrayList<Disease> diseases = diseaseDao.generateResultList(search, db);
+                            req.setAttribute("output", diseases);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "drug":
+                        try {
+                            ArrayList<Drug> drugs = drugDao.generateResultList(search, db);
+                            req.setAttribute("output", drugs);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                }
+                break;
             case "clinical-annotation":
                 try {
                     ArrayList<annotationResult> annotationResults = clinicalAnnotationDao.generateResultList(search, db);
@@ -33,6 +65,7 @@ public class displayServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                break;
 
             case "related-to":
                 try {
@@ -41,22 +74,25 @@ public class displayServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                break;
 
             case "literature":
                 try {
-                    ArrayList<occurrenceResult> occurrenceResults = occurrenceDao.generateResultList("literature", search, db);
-                    req.setAttribute("output", occurrenceResults);
+                    ArrayList<occurrenceResult> literatureResults = occurrenceDao.generateResultList(search, db, "Literature");
+                    req.setAttribute("output", literatureResults);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                break;
 
             case "pathway":
                 try {
-                    ArrayList<occurrenceResult> occurrenceResults = occurrenceDao.generateResultList("pathway", search, db);
-                    req.setAttribute("output", occurrenceResults);
+                    ArrayList<occurrenceResult> pathwayResults = occurrenceDao.generateResultList(search, db, "Pathway");
+                    req.setAttribute("output", pathwayResults);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                break;
         }
         // dispatch
         req.getRequestDispatcher("/display.jsp").forward(req, res);

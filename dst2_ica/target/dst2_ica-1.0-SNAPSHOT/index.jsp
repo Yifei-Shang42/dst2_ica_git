@@ -37,7 +37,6 @@
                 </c:otherwise>
             </c:choose>
         </div>
-        <hr>
         <div class="form">
             <form method="get" action="search">
                 <p>Search for any Drug, Gene or Variant:</p> <br>
