@@ -22,7 +22,7 @@
         <form method="post" action="diagnosis">
             <p>Input a List of Variant IDs (How to generate them? <a href="guideline.pdf">CLICK HERE</a>)</p>
             <textarea name="searchList" cols="40" rows="5"></textarea><br>
-            <input type="file"><br>
+            <input type="file" name="file" size="50"><br>
             <input type="submit">
         </form>
     </div>
