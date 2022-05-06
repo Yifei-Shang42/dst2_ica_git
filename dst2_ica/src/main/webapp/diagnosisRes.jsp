@@ -1,37 +1,37 @@
-<%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%--
   Created by IntelliJ IDEA.
   User: surface
-  Date: 4/21/2022
-  Time: 3:08 PM
+  Date: 5/6/2022
+  Time: 8:29 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Search Results</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
+    <title>Diagnosis Results</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
 <div class="container">
     <div class="welcome">
         <a href="index.jsp"><h2 class="title">Precision Medicine Database</h2></a>
-        <h3 class="sub-title">Your Search for ${search} Returned ${output.size()} Result(s):</h3> <br>
+        <h3 class="sub-title">Diagnosis System</h3> <br>
     </div>
     <br>
+    <div class="table-head">
+        <h3>Based on your Input Variant List, Potential Diagnosis and Medications are as follows:</h3>
+    </div>
     <div class="res-table">
         <table>
             <thead>
-                <tr>
-                    <c:forEach items="${output[0].getHead()}" var="head">
-                        <th>
-                            <c:out value="head"></c:out>
-                        </th>
-                    </c:forEach>
-                </tr>
+            <tr>
+                <c:forEach items="${output[0].getHead()}" var="head">
+                    <th>
+                        <c:out value="${head}"></c:out>
+                    </th>
+                </c:forEach>
+            </tr>
             </thead>
             <tbody>
             <c:forEach items="${output}" var="result">

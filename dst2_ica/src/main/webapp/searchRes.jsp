@@ -22,26 +22,44 @@
         <h3 class="sub-title">Your Search for ${search} Returned ${output.size()} Result(s):</h3> <br>
     </div>
     <br>
-    <hr>
     <div class="res-table">
         <table>
             <thead>
                 <tr>
-                    <th>Results:</th>
-                    <th>Category:</th>
+                    <c:forEach items="${output[0].getHead()}" var="head">
+                        <th>
+                            <c:out value="head"></c:out>
+                        </th>
+                    </c:forEach>
                 </tr>
             </thead>
             <tbody>
-            <c:forEach items="${output}" var="searchResult">
+            <c:forEach items="${output}" var="result">
                 <tr>
-                    <td>
-                        <p><a href="display?search=${searchResult[0]}&db=${searchResult[1]}&section=overview">
-                            <c:out value="${searchResult[0]}"></c:out>
-                        </a></p>
-                    </td>
-                    <td>
-                        <p><c:out value="${searchResult[1]}"></c:out></p>
-                    </td>
+                    <c:forEach items="${result.getData()}" var="data">
+                        <td>
+                            <c:if test="${data.hasLink()}">
+                                <c:if test="${data.hasMultipleLinks()}">
+                                    <c:forEach items="${data.getInfoList()}" var="info">
+                                        <a href="${data.getLink().replaceAll("~", info.replaceAll(" ", "%20"))}">
+                                            <c:out value="${info}"></c:out>
+                                        </a>
+                                        <br>
+                                    </c:forEach>
+                                </c:if>
+                                <c:if test="${!data.hasMultipleLinks()}">
+                                    <a href="${data.getLink()}">
+                                        <c:out value="${data.getInfo()}"></c:out>
+                                    </a>
+                                </c:if>
+                            </c:if>
+                            <c:if test="${!data.hasLink()}">
+                                <p>
+                                    <c:out value="${data.getInfo()}"></c:out>
+                                </p>
+                            </c:if>
+                        </td>
+                    </c:forEach>
                 </tr>
             </c:forEach>
             </tbody>

@@ -37,6 +37,9 @@
                 </c:otherwise>
             </c:choose>
         </div>
+        <div class="diagnosis">
+            <button><a href="diagnosis.jsp">Diagnosis System</a></button>
+        </div>
         <div class="form">
             <form method="get" action="search">
                 <p>Search for any Drug, Gene or Variant:</p> <br>

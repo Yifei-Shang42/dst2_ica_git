@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dst2_ica" target="1.8" />
+      <module name="dst2_ica" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

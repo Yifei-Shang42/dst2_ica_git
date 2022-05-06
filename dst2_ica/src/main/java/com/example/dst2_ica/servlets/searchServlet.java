@@ -18,19 +18,14 @@ import java.util.List;
 public class searchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String search = req.getParameter("search");
-        // put into one list
-        ArrayList<List> output = new ArrayList<>();
         // try search in gene table
         try {
             ArrayList<searchResult> searchResults = searchDao.generateResultList(search);
-            for (searchResult searchResult : searchResults) {
-                output.add(new ArrayList<>(Arrays.asList(searchResult.getName(), searchResult.getDB())));
-            }
+            req.setAttribute("output", searchResults);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         // dispatch
-        req.setAttribute("output", output);
         req.setAttribute("search", search);
         req.getRequestDispatcher("/searchRes.jsp").forward(req, res);
     }

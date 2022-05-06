@@ -39,7 +39,7 @@ public class occurrenceResult extends Result{
     public ArrayList<String> getHead() {
         return new ArrayList<>(Arrays.asList("Source ID", "Source Name",
                 "Object Name", "Object Type"));
-    }
+    }   
 
     public ArrayList<Data> getData() {
         ArrayList<Data> data = new ArrayList<>();
