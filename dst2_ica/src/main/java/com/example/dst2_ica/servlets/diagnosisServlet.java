@@ -17,11 +17,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @WebServlet(urlPatterns = "/diagnosis")
-@MultipartConfig(
-        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
-        maxFileSize = 1024 * 1024 * 10,      // 10 MB
-        maxRequestSize = 1024 * 1024 * 100   // 100 MB
-)
 public class diagnosisServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         ArrayList<String> searchList = generateSearchList(req.getParameter("searchList"));

@@ -25,7 +25,6 @@
                     </c:if>
                 </h2>
             </a>
-
         </div>
         <div class="sign-in">
             <c:choose>

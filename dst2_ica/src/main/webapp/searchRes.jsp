@@ -27,9 +27,7 @@
             <thead>
                 <tr>
                     <c:forEach items="${output[0].getHead()}" var="head">
-                        <th>
-                            <c:out value="head"></c:out>
-                        </th>
+                        <th><c:out value="${head}"></c:out></th>
                     </c:forEach>
                 </tr>
             </thead>
@@ -39,24 +37,10 @@
                     <c:forEach items="${result.getData()}" var="data">
                         <td>
                             <c:if test="${data.hasLink()}">
-                                <c:if test="${data.hasMultipleLinks()}">
-                                    <c:forEach items="${data.getInfoList()}" var="info">
-                                        <a href="${data.getLink().replaceAll("~", info.replaceAll(" ", "%20"))}">
-                                            <c:out value="${info}"></c:out>
-                                        </a>
-                                        <br>
-                                    </c:forEach>
-                                </c:if>
-                                <c:if test="${!data.hasMultipleLinks()}">
-                                    <a href="${data.getLink()}">
-                                        <c:out value="${data.getInfo()}"></c:out>
-                                    </a>
-                                </c:if>
+                                <a href="${data.getLink()}"><c:out value="${data.getInfo()}"></c:out></a>
                             </c:if>
                             <c:if test="${!data.hasLink()}">
-                                <p>
-                                    <c:out value="${data.getInfo()}"></c:out>
-                                </p>
+                                <p><c:out value="${data.getInfo()}"></c:out></p>
                             </c:if>
                         </td>
                     </c:forEach>
