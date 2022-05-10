@@ -50,7 +50,7 @@
                             <h3>Pathway</h3>
                         </c:if>
                     </div>
-                        <table>
+                        <table class="table">
                             <thead>
                             <tr>
                                 <c:forEach items="${output[0].getHead()}" var="head">
