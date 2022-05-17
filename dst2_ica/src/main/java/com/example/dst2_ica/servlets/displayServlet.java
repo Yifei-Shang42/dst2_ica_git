@@ -85,6 +85,15 @@ public class displayServlet extends HttpServlet {
                 }
                 break;
 
+            case "drug-label":
+                try {
+                    ArrayList<dosingResult> dosingResults = dosingDao.generateResultList(search, db);
+                    req.setAttribute("output", dosingResults);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+
             case "pathway":
                 try {
                     ArrayList<occurrenceResult> pathwayResults = occurrenceDao.generateResultList(search, db, "Pathway");

@@ -49,6 +49,9 @@
                         <c:if test="${section.equals('pathway')}">
                             <h3>Pathway</h3>
                         </c:if>
+                        <c:if test="${section.equals('drug-label')}">
+                            <h3>Pathway</h3>
+                        </c:if>
                     </div>
                         <table class="table">
                             <thead>
